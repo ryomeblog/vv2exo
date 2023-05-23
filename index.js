@@ -30,18 +30,21 @@ const unicodeStrings = lines.map((line) => {
 
   const paddedUnicode = swappedUnicode.padEnd(4096, '0');
 
-  let color = 'ffffff';
+  let color = '000000';
+  let color2 = 'ffffff';
   let layer = "1";
   if (speakerName.includes(settings.setting.speakerNameA)) {
-    color = 'f61b82';
+    color = settings.setting.colorA;
+    color2 = settings.setting.color2A;
     layer = settings.setting.layerA;
   } else if (speakerName.includes(settings.setting.speakerNameB)) {
-    color = '86e03c';
+    color = settings.setting.colorB;
+    color2 = settings.setting.color2B;
     layer = settings.setting.layerB;
   }
 
-  let secondLength = 0;
-  if (settings.setting.secondLength === 'none') {
+  let secondLength = 50;
+  if (settings.setting.secondLength === 'undefined' || settings.setting.secondLength === null || typeof settings.setting.secondLength === 'string' || settings.setting.secondLength <= 0) {
     secondLength = 100;
   } else {
     secondLength = settings.setting.secondLength;
@@ -50,6 +53,7 @@ const unicodeStrings = lines.map((line) => {
   const outputText = formatText
     .replace('【text】', paddedUnicode)
     .replace('【color】', color)
+    .replace('【color2】', color2)
     .replace('【loop】', loopCount)
     .replace('【loop】', loopCount)
     .replace('【loop】', loopCount)
@@ -57,6 +61,7 @@ const unicodeStrings = lines.map((line) => {
     .replace('【Y】', settings.setting.y)
     .replace('【font】', settings.setting.font)
     .replace('【size】', settings.setting.size)
+    .replace('【rate】', settings.setting.rate)
     .replace('【layer】', Number(layer))
     .replace('【start】', (loopCount * Number(secondLength)) + 1)
     .replace('【end】', (loopCount + 1) * Number(secondLength));

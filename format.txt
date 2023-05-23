@@ -22,7 +22,7 @@ spacing_x=0
 spacing_y=0
 precision=1
 color=ycolorz
-color2=000000
+color2=ycolor2z
 font=yfontz
 text=ytextz
 [yloopz.1]
@@ -30,7 +30,7 @@ _name=•W€•`‰æ
 X=yXz
 Y=yYz
 Z=0.0
-Šg‘å—¦=100.00
+Šg‘å—¦=yratez
 “§–¾“x=0.0
 ‰ñ“]=0.00
 blend=0

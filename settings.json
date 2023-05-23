@@ -1,15 +1,20 @@
 {
     "setting": {
-        "inputFilePath": "./sample/sample.txt",
+        "inputFilePath": "../text.txt",
         "outputFilePath": "./result.exo",
         "speakerNameA": "四国めたん",
         "speakerNameB": "ずんだもん",
         "layerA": "1",
         "layerB": "2",
+        "colorA": "ff00ff",
+        "colorB": "008000",
+        "color2A": "ffffff",
+        "color2B": "ffffff",
         "secondLength": "250",
         "x": "-410.0",
         "y": "388.0",
+        "rate": "190.00",
         "font": "メイリオ",
-        "size": "80"
+        "size": "34"
     }
 }
